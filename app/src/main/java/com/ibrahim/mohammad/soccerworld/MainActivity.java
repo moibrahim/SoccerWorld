@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
@@ -20,7 +21,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private EditText etloginPassword;
     private String loginPassword;
     private String loginUsername;
-
+    private User user;
+    private AppDatabase database;
 
 
     @Override
@@ -38,7 +40,42 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         btLogin.setOnClickListener(this);
         btRegisterPg.setOnClickListener(this);
 
+
+
+/*
+        database = AppDatabase.getDatabase(getApplicationContext());
+
+        // cleanup for testing some initial data
+        database.userDao().removeAllUsers();
+        // add some data
+        List<User> users = database.userDao().getAllUser();
+        if (users.size()==0) {
+            database.userDao().addUser(new User(1, "Test 1", 1));
+            user = database.userDao().getAllUser().get(0);
+            Trophy trophy = new Trophy(user.id, "Learned to use 3");
+            database.trophyDao().addTrophy(trophy);
+            database.userDao().addUser(new User(2, "Test 2", 2));
+            database.userDao().addUser(new User(3, "Test 3", 3));
+        }
+
+*/
+
     }
+/*
+
+    private void updateFirstUserData() {
+        List<User> user = database.userDao().getAllUser();
+        List<Trophy> trophiesForUser = database.trophyDao().findTrophiesForUser(user.get(0).id);
+        TextView textView = findViewById(R.id.tvUsername);
+        Toast.makeText(this, trophiesForUser.toString(), Toast.LENGTH_SHORT).show();
+        if (user.size()>0){
+            textView.setText(user.get(0).name + " Skill points " + user.get(0).skillPoints + " Trophys " + trophiesForUser.size() );
+        }
+    }
+
+*/
+
+
 
     @Override
     public void onClick(View v) {
@@ -60,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     Toast.makeText(MainActivity.this,
                             "Login Failed, try agian", Toast.LENGTH_LONG).show();
                 }
-                    break;
+                break;
 
             case R.id.btRegisterPg:
                 Intent registerIntent = new Intent(MainActivity.this, RegisterActivity.class);
@@ -70,4 +107,5 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
 
     }
+
 }
