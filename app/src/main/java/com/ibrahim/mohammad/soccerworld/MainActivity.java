@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private String loginPassword;
     private String loginUsername;
     private AppDatabase database;
+    private String passwordDatabase;
     private String usernameDatabase;
     private User user;
 
@@ -45,10 +46,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         database.userDao().removeAllUsers();
         database.userDao().addUser(new User(1, "Test 1", "past"));
 
-
-        user = database.userDao().getAllUser().get(0);
-        usernameDatabase = user.name.toString();
-        Toast.makeText(MainActivity.this, "Logged in as Mo, Welcome back!" + usernameDatabase, Toast.LENGTH_LONG).show();
     }
 
 
@@ -62,18 +59,38 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
         switch (v.getId()) {
             case R.id.btLogin:
+                List<User> users = database.userDao().getAllUser();
+                for(int i=0; i<users.size(); i++){
+                    user = database.userDao().getAllUser().get(i);
+                    usernameDatabase = user.name.toString();
+                    passwordDatabase = user.password.toString();
 
-                if (loginPassword.equals("password") && loginUsername.equals("Moibra")){
+                    if (loginPassword.equals(passwordDatabase) && loginUsername.equals(usernameDatabase)){
+                        i=100;
+                        Toast.makeText(MainActivity.this,
+                                "Logged in as" + usernameDatabase + "-" +passwordDatabase  + ", Welcome back!", Toast.LENGTH_LONG).show();
+                        Intent loginIntent = new Intent(MainActivity.this, HomePageActivity.class);
+                        MainActivity.this.startActivity(loginIntent);
+                    }
+                    else {
+                        Toast.makeText(MainActivity.this,
+                                "Login Failed, try agian", Toast.LENGTH_LONG).show();
+                    }
+
+                }
+
+ /*               if (loginPassword.equals("password") && loginUsername.equals("Moibra")){
                     Toast.makeText(MainActivity.this,
                             "Logged in as Mo, Welcome back!", Toast.LENGTH_LONG).show();
                     Intent loginIntent = new Intent(MainActivity.this, HomePageActivity.class);
                     MainActivity.this.startActivity(loginIntent);
 
                 }
+
                 else {
                     Toast.makeText(MainActivity.this,
                             "Login Failed, try agian", Toast.LENGTH_LONG).show();
-                }
+                }*/
                 break;
 
             case R.id.btRegisterPg:

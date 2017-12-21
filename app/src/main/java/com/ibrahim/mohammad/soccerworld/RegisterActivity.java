@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class RegisterActivity extends AppCompatActivity implements OnClickListener {
 
 
@@ -22,6 +24,8 @@ public class RegisterActivity extends AppCompatActivity implements OnClickListen
     private String password;
     private String email;
     private String name;
+    private AppDatabase database;
+    private int userCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,10 @@ public class RegisterActivity extends AppCompatActivity implements OnClickListen
         btJoinNow = (Button) findViewById(R.id.btRegister);
 
         btJoinNow.setOnClickListener(this);
+
+        database = AppDatabase.getDatabase(getApplicationContext());
+
+        database.userDao().addUser(new User(2, "Test 2", "past"));
 
 
     }
@@ -54,6 +62,11 @@ public class RegisterActivity extends AppCompatActivity implements OnClickListen
                     "Please fill all fields", Toast.LENGTH_SHORT).show();
         }
         else {
+
+            List<User> users = database.userDao().getAllUser();
+            userCount = users.size() + 1;
+            database.userDao().addUser(new User(userCount, username, password));
+
             Intent prefIntent = new Intent(RegisterActivity.this, PreferenceActivity.class);
             prefIntent.putExtra("usernameInput", username);
             RegisterActivity.this.startActivity(prefIntent);
