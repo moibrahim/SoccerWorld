@@ -2,12 +2,13 @@
     <string name="app_name">Soccer World</string>
     <string name="title_activity_preferences">PreferencesActivity</string>
     <string name="username" />
-    <string name="prfSelectLgTv">Select your favourite leagues (Images coming soon)</string>
+    <string name="prfSelectLgTv">Select your favourite leagues</string>
     <string name="eplLabel">English Premier League (England)</string>
     <string name="labelLaliga">La Liga (Spain)</string>
     <string name="labelBundesliga">Bundesliga (Germany)</string>
     <string name="labelSeriaA">Seria A (Italy)</string>
     <string name="labelLigue1">Ligue 1 (France)</string>
     <string name="labelRemMe">Remeber me</string>
+    <string name="guestBtn">Guest Mode</string>
 
 </resources>

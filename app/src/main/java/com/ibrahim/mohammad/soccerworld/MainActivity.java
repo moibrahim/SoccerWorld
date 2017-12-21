@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     private Button btRegisterPg;
     private Button btLogin;
+    private Button btGuest;
     private String adminUsername;
     private String adminPassword;
     private EditText etloginUsername;
@@ -34,20 +35,21 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
         btRegisterPg = (Button) findViewById(R.id.btRegisterPg);
         btLogin = (Button) findViewById(R.id.btLogin);
-
+        btGuest = (Button) findViewById(R.id.btGuest);
         etloginUsername = (EditText) findViewById(R.id.etLoginUsername);
         etloginPassword = (EditText) findViewById(R.id.etLoginPassword);
 
 
         btLogin.setOnClickListener(this);
         btRegisterPg.setOnClickListener(this);
+        btGuest.setOnClickListener(this);
+
 
         database = AppDatabase.getDatabase(getApplicationContext());
         database.userDao().removeAllUsers();
-        database.userDao().addUser(new User(1, "Test 1", "past"));
+        database.userDao().addUser(new User(1, "admin", "admin"));
 
     }
-
 
 
 
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
         loginPassword = etloginPassword.getText().toString();
         loginUsername = etloginUsername.getText().toString();
+        boolean userfound = false;
 
         switch (v.getId()) {
             case R.id.btLogin:
@@ -66,40 +69,38 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     passwordDatabase = user.password.toString();
 
                     if (loginPassword.equals(passwordDatabase) && loginUsername.equals(usernameDatabase)){
-                        i=100;
+                        userfound = true;
                         Toast.makeText(MainActivity.this,
-                                "Logged in as" + usernameDatabase + "-" +passwordDatabase  + ", Welcome back!", Toast.LENGTH_LONG).show();
+                                "Logged in as " + usernameDatabase + ", Welcome back!", Toast.LENGTH_LONG).show();
                         Intent loginIntent = new Intent(MainActivity.this, HomePageActivity.class);
                         MainActivity.this.startActivity(loginIntent);
                     }
                     else {
-                        Toast.makeText(MainActivity.this,
-                                "Login Failed, try agian", Toast.LENGTH_LONG).show();
+                        userfound = false;
                     }
 
                 }
-
- /*               if (loginPassword.equals("password") && loginUsername.equals("Moibra")){
-                    Toast.makeText(MainActivity.this,
-                            "Logged in as Mo, Welcome back!", Toast.LENGTH_LONG).show();
-                    Intent loginIntent = new Intent(MainActivity.this, HomePageActivity.class);
-                    MainActivity.this.startActivity(loginIntent);
-
+                if (userfound == false){
+                    userNotFound();
                 }
-
-                else {
-                    Toast.makeText(MainActivity.this,
-                            "Login Failed, try agian", Toast.LENGTH_LONG).show();
-                }*/
                 break;
 
             case R.id.btRegisterPg:
                 Intent registerIntent = new Intent(MainActivity.this, RegisterActivity.class);
                 MainActivity.this.startActivity(registerIntent);
                 break;
+
+            case R.id.btGuest:
+                Intent guestIntent = new Intent(MainActivity.this, HomePageActivity.class);
+                MainActivity.this.startActivity(guestIntent);
+                break;
         }
 
 
     }
+    public void userNotFound(){
+            Toast.makeText(MainActivity.this,
+                    "Login Failed, try agian", Toast.LENGTH_LONG).show();
 
+    }
 }

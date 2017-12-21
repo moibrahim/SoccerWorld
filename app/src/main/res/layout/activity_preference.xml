@@ -16,12 +16,13 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
+        android:background="@android:color/holo_green_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.003"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.731" />
+        app:layout_constraintVertical_bias="0.571" />
 
     <TextView
         android:id="@+id/tvUsername"
@@ -54,8 +55,8 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintVertical_bias="0.138" />
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintVertical_bias="0.077" />
 
     <Button
         android:id="@+id/btNext"
@@ -65,28 +66,31 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
+        android:background="@android:color/holo_green_light"
+        android:elevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.975"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.723" />
+        app:layout_constraintVertical_bias="0.558" />
 
     <Button
         android:id="@+id/btSelectFavLg"
-        android:layout_width="237dp"
-        android:layout_height="325dp"
+        android:layout_width="177dp"
+        android:layout_height="231dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:visibility="visible"
         android:background="@android:color/transparent"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/btPrev"
         app:layout_constraintRight_toLeftOf="@+id/btNext"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.752" />
+        app:layout_constraintVertical_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.551" />
 
     <TextView
         android:id="@+id/tvEpl"
@@ -102,7 +106,8 @@
         app:layout_constraintLeft_toRightOf="@+id/btPrev"
         app:layout_constraintRight_toLeftOf="@+id/btNext"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548" />
+        app:layout_constraintVertical_bias="0.799"
+        app:layout_constraintHorizontal_bias="0.574" />
 
     <TextView
         android:id="@+id/tvLaLiga"
@@ -118,7 +123,8 @@
         app:layout_constraintLeft_toRightOf="@+id/btPrev"
         app:layout_constraintRight_toLeftOf="@+id/btNext"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548" />
+        app:layout_constraintVertical_bias="0.799"
+        app:layout_constraintHorizontal_bias="0.521" />
 
     <TextView
         android:id="@+id/tvBundesliga"
@@ -134,7 +140,8 @@
         app:layout_constraintLeft_toRightOf="@+id/btPrev"
         app:layout_constraintRight_toLeftOf="@+id/btNext"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548" />
+        app:layout_constraintVertical_bias="0.799"
+        app:layout_constraintHorizontal_bias="0.533" />
 
     <TextView
         android:id="@+id/tvSeriaA"
@@ -150,7 +157,8 @@
         app:layout_constraintLeft_toRightOf="@+id/btPrev"
         app:layout_constraintRight_toLeftOf="@+id/btNext"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548" />
+        app:layout_constraintVertical_bias="0.799"
+        app:layout_constraintHorizontal_bias="0.52" />
 
     <TextView
         android:id="@+id/tvLigueOne"
@@ -166,28 +174,30 @@
         app:layout_constraintLeft_toRightOf="@+id/btPrev"
         app:layout_constraintRight_toLeftOf="@+id/btNext"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548" />
+        app:layout_constraintVertical_bias="0.799"
+        app:layout_constraintHorizontal_bias="0.525" />
 
     <ImageView
         android:id="@+id/selectStarOn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        app:srcCompat="@android:drawable/btn_star_big_on"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="37dp"
+        android:layout_height="38dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="0.693" />
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.218"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
 
     <ImageView
         android:id="@+id/selectStarOff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="37dp"
+        android:layout_height="38dp"
         app:srcCompat="@android:drawable/btn_star_big_off"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
@@ -197,6 +207,37 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="0.693" />
+        app:layout_constraintVertical_bias="0.218"
+        app:layout_constraintHorizontal_bias="0.501" />
+
+    <ImageView
+        android:id="@+id/imageLeague"
+        android:layout_width="234dp"
+        android:layout_height="321dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintLeft_toRightOf="@+id/btPrev"
+        app:layout_constraintRight_toLeftOf="@+id/btNext"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pl" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="127dp"
+        android:layout_height="44dp"
+        android:background="@android:color/holo_green_light"
+        android:text="NEXT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageLeague"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

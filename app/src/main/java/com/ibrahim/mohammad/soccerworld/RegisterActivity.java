@@ -43,7 +43,6 @@ public class RegisterActivity extends AppCompatActivity implements OnClickListen
 
         database = AppDatabase.getDatabase(getApplicationContext());
 
-        database.userDao().addUser(new User(2, "Test 2", "past"));
 
 
     }
@@ -66,7 +65,8 @@ public class RegisterActivity extends AppCompatActivity implements OnClickListen
             List<User> users = database.userDao().getAllUser();
             userCount = users.size() + 1;
             database.userDao().addUser(new User(userCount, username, password));
-
+            Toast.makeText(RegisterActivity.this,
+                    "Account created", Toast.LENGTH_SHORT).show();
             Intent prefIntent = new Intent(RegisterActivity.this, PreferenceActivity.class);
             prefIntent.putExtra("usernameInput", username);
             RegisterActivity.this.startActivity(prefIntent);

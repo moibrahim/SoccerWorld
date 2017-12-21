@@ -27,6 +27,7 @@ public class PreferenceActivity extends AppCompatActivity implements OnClickList
     private String userSelection;
     private ImageView starOn;
     private ImageView starOff;
+    private ImageView imageLeague;
     private String[] leagueSelections;
 
     @Override
@@ -48,6 +49,7 @@ public class PreferenceActivity extends AppCompatActivity implements OnClickList
 
         starOn = (ImageView) findViewById(R.id.selectStarOn);
         starOff = (ImageView) findViewById(R.id.selectStarOff);
+        imageLeague = (ImageView) findViewById(R.id.imageLeague);
 
         btNext = (Button) findViewById(R.id.btNext);
         btPrev = (Button) findViewById(R.id.btPrev);
@@ -80,26 +82,41 @@ public class PreferenceActivity extends AppCompatActivity implements OnClickList
                 case "epl":
                     tvEpl.setVisibility(View.INVISIBLE);
                     tvLaliga.setVisibility(View.VISIBLE);
+                    imageLeague.setImageResource(R.drawable.laliga);
+                    starOn.setVisibility(View.INVISIBLE);
+                    starOff.setVisibility(View.VISIBLE);
                     current = "laliga";
                 break;
                 case "laliga":
                     tvLaliga.setVisibility(View.INVISIBLE);
                     tvBundesliga.setVisibility(View.VISIBLE);
+                    imageLeague.setImageResource(R.drawable.bundesliga);
+                    starOn.setVisibility(View.INVISIBLE);
+                    starOff.setVisibility(View.VISIBLE);
                     current = "bundesliga";
                     break;
                 case "bundesliga":
                     tvBundesliga.setVisibility(View.INVISIBLE);
                     tvSeriaA.setVisibility(View.VISIBLE);
+                    imageLeague.setImageResource(R.drawable.seria);
+                    starOn.setVisibility(View.INVISIBLE);
+                    starOff.setVisibility(View.VISIBLE);
                     current = "seriaa";
                     break;
                 case "seriaa":
                     tvSeriaA.setVisibility(View.INVISIBLE);
                     tvLg1.setVisibility(View.VISIBLE);
+                    imageLeague.setImageResource(R.drawable.ligue1);
+                    starOn.setVisibility(View.INVISIBLE);
+                    starOff.setVisibility(View.VISIBLE);
                     current = "lg1";
                     break;
                 case "lg1":
                     tvLg1.setVisibility(View.INVISIBLE);
                     tvEpl.setVisibility(View.VISIBLE);
+                    imageLeague.setImageResource(R.drawable.pl);
+                    starOn.setVisibility(View.INVISIBLE);
+                    starOff.setVisibility(View.VISIBLE);
                     current = "epl";
                     break;
 
@@ -111,26 +128,41 @@ public class PreferenceActivity extends AppCompatActivity implements OnClickList
                 case "epl":
                     tvEpl.setVisibility(View.INVISIBLE);
                     tvLg1.setVisibility(View.VISIBLE);
+                    imageLeague.setImageResource(R.drawable.ligue1);
                     current = "lg1";
+                    starOn.setVisibility(View.INVISIBLE);
+                    starOff.setVisibility(View.VISIBLE);
                     break;
                 case "lg1":
                     tvLg1.setVisibility(View.INVISIBLE);
                     tvSeriaA.setVisibility(View.VISIBLE);
+                    imageLeague.setImageResource(R.drawable.seria);
+                    starOn.setVisibility(View.INVISIBLE);
+                    starOff.setVisibility(View.VISIBLE);
                     current = "seriaa";
                     break;
                 case "seriaa":
                     tvSeriaA.setVisibility(View.INVISIBLE);
                     tvBundesliga.setVisibility(View.VISIBLE);
+                    imageLeague.setImageResource(R.drawable.bundesliga);
+                    starOn.setVisibility(View.INVISIBLE);
+                    starOff.setVisibility(View.VISIBLE);
                     current = "bundesliga";
                     break;
                 case "bundesliga":
                     tvBundesliga.setVisibility(View.INVISIBLE);
                     tvLaliga.setVisibility(View.VISIBLE);
+                    imageLeague.setImageResource(R.drawable.laliga);
+                    starOn.setVisibility(View.INVISIBLE);
+                    starOff.setVisibility(View.VISIBLE);
                     current = "laliga";
                     break;
                 case "laliga":
                     tvLaliga.setVisibility(View.INVISIBLE);
                     tvEpl.setVisibility(View.VISIBLE);
+                    imageLeague.setImageResource(R.drawable.pl);
+                    starOn.setVisibility(View.INVISIBLE);
+                    starOff.setVisibility(View.VISIBLE);
                     current = "epl";
                     break;
 
