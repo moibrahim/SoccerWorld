@@ -3,12 +3,16 @@ package com.ibrahim.mohammad.soccerworld;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.FirebaseInstanceIdService;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
@@ -102,5 +106,20 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             Toast.makeText(MainActivity.this,
                     "Login Failed, try agian", Toast.LENGTH_LONG).show();
 
+    }
+
+    public static class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
+
+        @Override
+        public void onTokenRefresh() {
+            // Get updated InstanceID token.
+            String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+            Log.d("myistanceID", "Refreshed token: " + refreshedToken);
+
+            // If you want to send messages to this application instance or
+            // manage this apps subscriptions on the server side, send the
+            // Instance ID token to your app server.
+            //sendRegistrationToServer(refreshedToken);
+        }
     }
 }

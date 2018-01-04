@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "751275752874",
+    "firebase_url": "https://soccer-a6299.firebaseio.com",
+    "project_id": "soccer-a6299",
+    "storage_bucket": "soccer-a6299.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751275752874:android:b08ff1be5ff697e6",
+        "android_client_info": {
+          "package_name": "com.ibrahim.mohammad.soccerworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751275752874-lgmkrrbt6phbqcn1j98pd01jc2npaqbq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmxuft2Gur_gFqImNbpBn70odEFj5cfw4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
