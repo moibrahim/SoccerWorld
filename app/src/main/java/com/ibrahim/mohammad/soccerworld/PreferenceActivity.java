@@ -18,6 +18,7 @@ public class PreferenceActivity extends AppCompatActivity implements OnClickList
     public Button btNext;
     public Button btPrev;
     public Button btSelect;
+    public Button btFinish;
     private TextView tvEpl;
     private TextView tvLaliga;
     private TextView tvBundesliga;
@@ -54,10 +55,12 @@ public class PreferenceActivity extends AppCompatActivity implements OnClickList
         btNext = (Button) findViewById(R.id.btNext);
         btPrev = (Button) findViewById(R.id.btPrev);
         btSelect = (Button) findViewById(R.id.btSelectFavLg);
+        btFinish = (Button) findViewById(R.id.btFinish);
 
         btNext.setOnClickListener(this);
         btPrev.setOnClickListener(this);
         btSelect.setOnClickListener(this);
+        btFinish.setOnClickListener(this);
 
 
         leagueSelections = new String[4];
@@ -167,6 +170,12 @@ public class PreferenceActivity extends AppCompatActivity implements OnClickList
                     break;
 
             }
+        }
+
+        if (v == btFinish){
+            Intent guestIntent = new Intent(PreferenceActivity.this, HomePageActivity.class);
+            PreferenceActivity.this.startActivity(guestIntent);
+
         }
 
         }
